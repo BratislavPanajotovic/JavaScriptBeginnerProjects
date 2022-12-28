@@ -1,4 +1,3 @@
-
 //console.log(dugme);
 
 
@@ -6,7 +5,7 @@
 
 // const newAccount = () => {
 // name
-// age 
+// age
 // initialBalance: 0;
 // }
 
@@ -19,25 +18,24 @@
 
 // deposit(200);
 
-const get = (selection) => {
-    const element = document.querySelector(selection);
-    if(element)
-    {
-    return element;
-}else{
-console.log('Element not found!');
+let massJohn = 92;
+let massMark = 78;
+let heightJohn = 1.95;
+let heightMark = 1.69;
+
+let MarkBMI = massMark / heightMark ** 2 / (heightMark * heightMark);
+let JohnBMI = massJohn / heightJohn ** 2 / (heightJohn * heightJohn);
+console.log(MarkBMI, JohnBMI);
+massJohn = 85;
+massMark = 95;
+heightJohn = 1.76;
+heightMark = 1.88;
+markHigherBMI = (massMark > massJohn);
+
+if (MarkBMI < JohnBMI) {
+    console.log(`John's BMI (${JohnBMI}) is higher than Mark's BMI (${MarkBMI})!`)
 }
 
-};
-const dugme = get('.dugme'); 
-const kocka = get('.Pravougaonik');  
+else console.log(`Mark's BMI (${MarkBMI}) is higher than John's BMI (${JohnBMI})!`)
 
-
-dugme.addEventListener('click', () => {
-    kocka.classList.add('move');
-});
-
-//map
-//filter
-//reduce
-
+console.log(markHigherBMI);
