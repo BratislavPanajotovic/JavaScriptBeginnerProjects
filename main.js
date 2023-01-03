@@ -127,7 +127,7 @@
 
 /////////////////////////////////// SWITCH //////////////////////////////////////////
 ///////////////// TERNARY CONDITIONAL OPERATOR //////////////////////////////////////////////
-const age = 23;
+/*const age = 23;
 //age >= 18 ? console.log('I like to drink wine ❤️') :
 // console.log('I like to drink water 👌');
 
@@ -141,4 +141,13 @@ if (age >= 18) {
 }
 console.log(drink2);
 
-console.log(`I like to drink ${age >= 18 ? 'wine ❤️' : 'water 👌'}`);
+console.log(`I like to drink ${age >= 18 ? 'wine ❤️' : 'water 👌'}`);*/
+
+//////////// CODING CHALLENGE #4 ////////////////////
+
+// let bill = 430;
+// let tip = bill >= 50 || bill <= 300 ? bill * 0.15 : bill * 0.2;
+// let finalValue = bill + tip;
+// console.log(`The bill was ${bill}, the tip was ${bill >= 50 || bill <= 300 ? bill * 0.15 : bill * 0.2}, and the total value ${finalValue}`);
+
+/////////////ACTIVATING STRICT MODE//////////////////
