@@ -77,18 +77,40 @@
 // }
 // console.log(yearsUnitlRetirement(1991, 'Jonas'));
 // console.log(yearsUnitlRetirement(1980, 'Boca'));
-let calcAverage = (a, b, c) => (a + b + c) / 3;
 
-let scoreDolphins = calcAverage(500, 600, 701);
-let scoreKoalas = calcAverage(42, 54, 71);
+////////////CODING CHALLENGE FUNCTIONS/////////////////////
+// const avgScore = (a, b, c) => (a, b, c) / 3;
 
+// let scoreDolphins = avgScore(11444480, 1145490, 16545192);
+// let scoreKoalas = avgScore(55, 22, 14);
 
-let checkWinner = (avgDolphins, avgKoalas) => {
-    if ((avgDolphins) >= avgKoalas * 2) {
-        console.log(`Dolphins win ${avgDolphins} vs ${avgKoalas}!`);
-    } else if ((avgKoalas) >= avgDolphins * 2) {
-        console.log(`Koalas win ${avgKoalas} vs ${avgDolphins}`);
-    } else { console.log(`No one wins!`) };
+// const checkWinner = (scoreDolphins, scoreKoalas) => {
+//     if (scoreDolphins >= scoreKoalas * 2) {
+//         console.log(`Winner of the trophy are Dolphins ${scoreDolphins} vs ${scoreKoalas}!`)
+//     } else if (scoreKoalas >= scoreDolphins * 2) {
+//         console.log(`Winner of the trophy are Koalas ${scoreKoalas} vs ${scoreDolphins} !`)
+//     } else { console.log(`No one won the the trophy!`) }
 
-};
-checkWinner(scoreDolphins, scoreKoalas);
+// }; checkWinner(scoreDolphins, scoreKoalas);
+
+//////////////////ARRAYS///////////////////
+// const friends = ['Michael', 'Steven', 'Peter'];
+// friends.push('Jay');
+// friends.unshift('John');
+// console.log(friends);
+// friends.pop();
+// console.log(friends);
+// friends.shift();
+// console.log(friends);
+
+/////////// CODING CHALLENGE ARRAYS //////////////////
+const calcTip = function (bill) {
+    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+const bills = [125, 555, 44];
+let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+let total = [(bills[0] + calcTip(bills[0])), (bills[1] + calcTip(bills[1])), (bills[2] + calcTip(bills[2]))];
+console.log(bills);
+console.log(tips);
+console.log(total);
