@@ -104,13 +104,19 @@
 // console.log(friends);
 
 /////////// CODING CHALLENGE ARRAYS //////////////////
-const calcTip = function (bill) {
-    return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-}
+// const calcTip = function (bill) {
+//     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+// }
 
-const bills = [125, 555, 44];
-let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-let total = [(bills[0] + calcTip(bills[0])), (bills[1] + calcTip(bills[1])), (bills[2] + calcTip(bills[2]))];
-console.log(bills);
-console.log(tips);
-console.log(total);
+// const bills = [125, 555, 44];
+// let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+// let total = [(bills[0] + calcTip(bills[0])), (bills[1] + calcTip(bills[1])), (bills[2] + calcTip(bills[2]))];
+// console.log(bills);
+// console.log(tips);
+// console.log(total);
+//////////challenge/////////
+const jonas = {
+    name: 'Jonas',
+    friends: ['Michael', 'Peter', 'Steven'],
+}
+console.log(`${jonas.name} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}!`);
