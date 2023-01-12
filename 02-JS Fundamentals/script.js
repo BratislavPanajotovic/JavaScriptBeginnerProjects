@@ -120,23 +120,53 @@
 //     friends: ['Michael', 'Peter', 'Steven'],
 // }
 // console.log(`${jonas.name} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}!`);
-const jonas = {
-    name: 'Jonas',
-    lastName: 'Schmedtmann',
-    birthYear: 1991,
-    job: 'teacher',
-    friends: ['Michael', 'Peter', 'Steven'],
-    hasDriverLicense: true,
+// const jonas = {
+//     name: 'Jonas',
+//     lastName: 'Schmedtmann',
+//     birthYear: 1991,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven'],
+//     hasDriverLicense: true,
 
-    calcAge: function () {
-        this.age = 2037 - this.birthYear;
-        return this.age;
-    },
-    getSummary: function () {
-        return `${this.name} is a ${this.calcAge()}-year old ${jonas.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver's license!`
+//     calcAge: function () {
+//         this.age = 2037 - this.birthYear;
+//         return this.age;
+//     },
+//     getSummary: function () {
+//         return `${this.name} is a ${this.calcAge()}-year old ${jonas.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver's license!`
+//     }
+
+// };
+
+
+// console.log(jonas.getSummary());
+
+//////////////////CODING CHALLENGE///////////////////
+
+const Mark = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    height: 1.69,
+    weight: 78,
+    calcBMI: function () {
+        let BMI = this.weight / this.height ** 2;
+        return BMI;
     }
+}
+const John = {
+    firstName: 'John',
+    lastName: 'Smith',
+    height: 1.95,
+    weight: 92,
+    calcBMI: function () {
+        let BMI = this.weight / this.height ** 2;
+        return BMI;
+    }
+}
+if (John.calcBMI > Mark.calcBMI) {
+    console.log(`${John.firstName} ${John.lastName}'s BMI(${John.calcBMI()}) is higher than ${Mark.firstName} ${Mark.lastName}'s BMI (${Mark.calcBMI()})`)
+} else {
+    console.log(`${Mark.firstName} ${Mark.lastName}'s BMI(${Mark.calcBMI()}) is higher than ${John.firstName} ${John.lastName}'s BMI (${John.calcBMI()})!`)
+}
 
-};
 
-
-console.log(jonas.getSummary());
