@@ -115,8 +115,28 @@
 // console.log(tips);
 // console.log(total);
 //////////challenge/////////
+// const jonas = {
+//     name: 'Jonas',
+//     friends: ['Michael', 'Peter', 'Steven'],
+// }
+// console.log(`${jonas.name} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}!`);
 const jonas = {
     name: 'Jonas',
+    lastName: 'Schmedtmann',
+    birthYear: 1991,
+    job: 'teacher',
     friends: ['Michael', 'Peter', 'Steven'],
-}
-console.log(`${jonas.name} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}!`);
+    hasDriverLicense: true,
+
+    calcAge: function () {
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    },
+    getSummary: function () {
+        return `${this.name} is a ${this.calcAge()}-year old ${jonas.job}, and he has ${this.hasDriverLicense ? 'a' : 'no'} driver's license!`
+    }
+
+};
+
+
+console.log(jonas.getSummary());
