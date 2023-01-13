@@ -107,7 +107,6 @@
 // const calcTip = function (bill) {
 //     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
 // }
-
 // const bills = [125, 555, 44];
 // let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 // let total = [(bills[0] + calcTip(bills[0])), (bills[1] + calcTip(bills[1])), (bills[2] + calcTip(bills[2]))];
@@ -143,30 +142,56 @@
 
 //////////////////CODING CHALLENGE///////////////////
 
-const Mark = {
-    firstName: 'Mark',
-    lastName: 'Miller',
-    height: 1.69,
-    weight: 78,
-    calcBMI: function () {
-        let BMI = this.weight / this.height ** 2;
-        return BMI;
-    }
-}
-const John = {
-    firstName: 'John',
-    lastName: 'Smith',
-    height: 1.95,
-    weight: 92,
-    calcBMI: function () {
-        let BMI = this.weight / this.height ** 2;
-        return BMI;
-    }
-}
-if (John.calcBMI > Mark.calcBMI) {
-    console.log(`${John.firstName} ${John.lastName}'s BMI(${John.calcBMI()}) is higher than ${Mark.firstName} ${Mark.lastName}'s BMI (${Mark.calcBMI()})`)
-} else {
-    console.log(`${Mark.firstName} ${Mark.lastName}'s BMI(${Mark.calcBMI()}) is higher than ${John.firstName} ${John.lastName}'s BMI (${John.calcBMI()})!`)
-}
+// const Mark = {
+//     firstName: 'Mark',
+//     lastName: 'Miller',
+//     height: 1.69,
+//     weight: 78,
+//     calcBMI: function () {
+//         let BMI = this.weight / this.height ** 2;
+//         return Math.round(BMI);
+//     }
+// }
+// const John = {
+//     firstName: 'John',
+//     lastName: 'Smith',
+//     height: 1.95,
+//     weight: 92,
+//     calcBMI: function () {
+//         let BMI = this.weight / this.height ** 2;
+//         return Math.round(BMI);
+//     }
+// }
+// if (John.calcBMI > Mark.calcBMI) {
+//     console.log(`${John.firstName} ${John.lastName}'s BMI(${John.calcBMI()}) is higher than ${Mark.firstName} ${Mark.lastName}'s BMI (${Mark.calcBMI()})`)
+// } else {
+//     console.log(`${Mark.firstName} ${Mark.lastName}'s BMI(${Mark.calcBMI()}) is higher than ${John.firstName} ${John.lastName}'s BMI (${John.calcBMI()})!`)
+// }
 
 
+const jonas = [
+    'Jonas',
+    'Schmedtmann',
+    1991,
+    'teacher',
+    ['Peter', 'Michael', 'Steven'],
+    true
+];
+const types = [];
+
+for (let i = 0; i < jonas.length; i++) {
+    console.log(jonas[i], typeof jonas[i]);
+
+    // types[i] = typeof jonas[i];
+    types.push(typeof jonas[i]);
+};
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+
+}
+console.log(ages);
