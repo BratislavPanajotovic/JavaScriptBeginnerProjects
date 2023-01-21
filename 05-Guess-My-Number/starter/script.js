@@ -14,28 +14,29 @@ document.querySelector('.check').addEventListener('click', function () {
   if (!guess) {
     const message = (document.querySelector('.message').textContent =
       '⛔ No number!');
-    console.log(message);
   } else if (guess === secretNumber) {
     document.querySelector('.message').textContent =
       '🎉 You have chosen wisely🦉!';
   } else if (guess > secretNumber) {
-    if (score > 0) {
+    if (score > 1) {
       document.querySelector('.message').textContent =
         '👆 Your guess is higher than my number!';
       score--;
       document.querySelector('.score').textContent = score;
     } else {
+      document.querySelector('.score').textContent = score = 0;
       document.querySelector('.message').textContent = '😭 You lost the game!';
     }
   } else if (guess < secretNumber) {
-    if (score > 0) {
+    if (score > 1) {
       document.querySelector('.message').textContent =
         '👇 Your guess is lower than my number!';
       score--;
       document.querySelector('.score').textContent = score;
+    } else {
+      document.querySelector('.score').textContent = score = 0;
+      document.querySelector('.message').textContent = '😭 You lost the game!';
     }
-  } else {
-    document.querySelector('.message').textContent = '😭 You lost the game!';
   }
 });
 document.querySelector('.again').addEventListener('click', function () {
