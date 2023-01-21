@@ -112,6 +112,9 @@ h1 {
 .message {
   margin-bottom: 8rem;
   height: 3rem;
+  float: left;
+  width: calc(100% - 1em);
+  height: 1em;
 }
 
 .label-score {
