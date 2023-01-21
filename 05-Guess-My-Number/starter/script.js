@@ -19,9 +19,11 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = secretNumber;
-    highscore++;
-    document.querySelector('.highscore').textContent = highscore;
-  } else if (guess > secretNumber) {
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
+  } else if (guess !== secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent =
         '👆 Your guess is higher than my number!';
@@ -44,10 +46,11 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20 + 1);
   document.querySelector('.message').textContent = 'Start guessing...';
-  document.querySelector('.score').textContent = 20;
+  document.querySelector('.score').textContent = score;
   document.querySelector('.guess').value = null;
-  document.querySelector('.highscore').textContent = 0;
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').textContent = '?';
   document.querySelector('.number').style.width = '15rem';
