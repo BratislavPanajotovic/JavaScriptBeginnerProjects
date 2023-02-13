@@ -27,35 +27,54 @@ const switchPlayer = function () {
 };
 
 btnRoll.addEventListener('click', function () {
-  const dice = Math.trunc(Math.random() * 6) + 1;
+  if (playing) {
+    const dice = Math.trunc(Math.random() * 6) + 1;
 
-  diceEl.classList.remove('hidden');
-  console.log(dice);
-  diceEl.src = `dice-${dice}.png`;
+    diceEl.classList.remove('hidden');
+    console.log(dice);
+    diceEl.src = `dice-${dice}.png`;
 
-  if (dice !== 1) {
-    currentScore += dice;
-    document.getElementById(`current--${activePlayer}`).textContent =
-      currentScore;
-  } else {
-    switchPlayer();
+    if (dice !== 1) {
+      currentScore += dice;
+      document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+    } else {
+      switchPlayer();
+    }
   }
 });
 
 btnHold.addEventListener('click', function () {
-  scores[activePlayer] += currentScore;
-  document.getElementById(`score--${activePlayer}`).textContent =
-    scores[activePlayer];
-  switchPlayer();
+  if (playing) {
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+  }
   if (scores[activePlayer] >= 10) {
-    playing = false;
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add('player--winner');
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.remove('player--active');
+    diceEl.classList.add('hidden');
+    playing = false;
+  } else {
+    switchPlayer();
   }
+});
+btnNew.addEventListener('click', function () {
+  scores[0] = 0;
+  scores[1] = 0;
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+  document.querySelector('.player--0').classList.remove('player--winner');
+  document.querySelector('.player--1').classList.remove('player--winner');
 });
 console.log(currentScore);
 console.log(score0El.textContent);
