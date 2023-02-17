@@ -11,7 +11,6 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
   openingHours: {
     thu: {
       open: 12,
@@ -22,8 +21,54 @@ const restaurant = {
       close: 23,
     },
     sat: {
-      open: 0, // Open 24 hours
+      open: 0,
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
+
+const arr = [2, 3, 4];
+console.log(arr);
+let [prvi, , drugi] = restaurant.categories;
+
+// let temp = prvi;
+// prvi = drugi;
+// drugi = temp;
+// console.log(prvi, drugi);
+
+[prvi, drugi] = [drugi, prvi];
+console.log(prvi, drugi);
+
+console.log(restaurant.order(2, 0));
+const [starter, main] = restaurant.order(2, 0);
+console.log(starter, main);
+
+// Nested destructuring - Destructuring inside destructuring
+
+const nested = [2, 4, [5, 6]];
+
+// const [i, , j] = nested;
+// console.log(i, j);
+
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+//Default values
+const [p = 1, q = 1, r = 1] = [8];
+console.log(p, q, r);
+
+//////////////Destructuring objects//////////////////
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
