@@ -40,6 +40,11 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${adress} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1},${ing2} and ${ing3}`
+    );
+  },
 };
 
 const arr = [7, 8, 9];
@@ -54,6 +59,20 @@ const mainMenuCopy = [...restaurant.mainMenu];
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
 
+// const ingredient = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
+// restaurant.orderPasta(...ingredient);
+
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guissepe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
 // restaurant.orderDelivery({
 //   time: '22:30',
 //   adress: 'Via del Sole, 21',
