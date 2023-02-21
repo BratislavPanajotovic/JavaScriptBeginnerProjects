@@ -47,17 +47,18 @@ const restaurant = {
   },
 };
 
-const arr = [7, 8, 9];
+const arr = [7, 8, 9, 10, 11, 12];
 const newArr = [1, 2, ...arr];
+const [a, b, ...others] = [arr];
+console.log(a, b, others);
+// const newMenu = ['Gnochi', ...restaurant.mainMenu];
+// console.log(newMenu);
 
-const newMenu = ['Gnochi', ...restaurant.mainMenu];
-console.log(newMenu);
-
-// Copy array
-const mainMenuCopy = [...restaurant.mainMenu];
-// join 2 arrays or more
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// // Copy array
+// const mainMenuCopy = [...restaurant.mainMenu];
+// // join 2 arrays or more
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
 
 // const ingredient = [
 //   prompt("Let's make pasta! Ingredient 1?"),
@@ -66,13 +67,13 @@ console.log(menu);
 // ];
 // restaurant.orderPasta(...ingredient);
 
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guissepe' };
-console.log(newRestaurant);
+// const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guissepe' };
+// console.log(newRestaurant);
 
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = 'Ristorante Roma';
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// const restaurantCopy = { ...restaurant };
+// restaurantCopy.name = 'Ristorante Roma';
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 // restaurant.orderDelivery({
 //   time: '22:30',
 //   adress: 'Via del Sole, 21',
@@ -143,23 +144,3 @@ console.log(restaurant.name);
 //   fri: { open: o, close: c },
 // } = openingHours;
 // console.log(o, c);
-/// izbrisi ovo////////////////////////////////////
-
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
-// 🔴 Delayed Departure from FAO to TXL (11h25)
-//              Arrival from BRU to FAO (11h45)
-//   🔴 Delayed Arrival from HEL to FAO (12h05)
-//            Departure from FAO to LIS (12h30)
-
-const getCode = str => str.slice(0, 3).toUpperCase();
-
-for (const flight of flights.split('+')) {
-  const [type, from, to, time] = flight.split(';');
-  const output = `${type.startsWith('_Delayed') ? '🔴' : ''}${type.replaceAll(
-    '_',
-    ' '
-  )} ${getCode(from)} ${getCode(to)} (${time.replace(':', 'h')})`.padStart(36);
-  console.log(output);
-}
