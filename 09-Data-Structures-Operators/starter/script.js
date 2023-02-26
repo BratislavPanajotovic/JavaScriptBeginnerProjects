@@ -51,6 +51,23 @@ for (const [i, el] of menu.entries()) {
   console.log(`${i + 2}: ${el}`);
 }
 
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(plane.length);
+
+console.log(plane.indexOf('2'));
+console.log(airline.slice(0, airline.lastIndexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat ');
+  else console.log('You got lucky');
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
 // const arr = [7, 8, 9, 10, 11, 12];
 // const newArr = [1, 2, ...arr];
 // const [a, b, ...others] = [arr];
@@ -173,4 +190,4 @@ for (const [i, el] of menu.entries()) {
 // const {
 //   fri: { open: o, close: c },
 // } = openingHours;
-// console.log(o, c);
+// console.log(o, c)
