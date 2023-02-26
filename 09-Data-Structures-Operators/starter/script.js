@@ -50,33 +50,40 @@ const restaurant = {
   },
 };
 
-const arr = [7, 8, 9, 10, 11, 12];
-const newArr = [1, 2, ...arr];
-const [a, b, ...others] = [arr];
-console.log(a, b, others);
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
 
-const [pizza, , risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, risotto, otherFood);
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 2}: ${el}`);
+}
 
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// const arr = [7, 8, 9, 10, 11, 12];
+// const newArr = [1, 2, ...arr];
+// const [a, b, ...others] = [arr];
+// console.log(a, b, others);
 
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
-  console.log(sum);
-};
+// const [pizza, , risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, risotto, otherFood);
 
-add(2, 3);
-add(5, 3, 7, 2);
-add(8, 2, 5, 3, 2, 1, 4);
-const x = [23, 5, 7];
-add(...x);
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
 
-restaurant.orderPizza('mushrooms', 'onion', 'spinach');
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+//   console.log(sum);
+// };
+
+// add(2, 3);
+// add(5, 3, 7, 2);
+// add(8, 2, 5, 3, 2, 1, 4);
+// const x = [23, 5, 7];
+// add(...x);
+
+// restaurant.orderPizza('mushrooms', 'onion', 'spinach');
 
 ////objects//
 
