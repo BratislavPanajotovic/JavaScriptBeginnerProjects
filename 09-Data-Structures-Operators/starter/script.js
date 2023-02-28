@@ -74,6 +74,38 @@ const loginEmail = ' Hello@jonas.Io \n';
 
 const normalizedEmail = loginEmail.toLowerCase().trim();
 console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+//replacing
+
+const priceGB = '288.97$';
+const priceUS = priceGB.replace('$', 'e').replace('.', ',');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23!';
+console.log(announcement.replaceAll('door', 'gate'));
+
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('boeing'));
+console.log(plane.startsWith('Air'));
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the new Airbus family');
+}
+//Practice
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('Youre not allowed on board');
+  } else {
+    console.log('Welcome aboard');
+  }
+};
+checkBaggage('I have a laptop, some foof and a pocket knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some snacks and a gun for protection');
+
 // const plane = 'A320';
 // console.log(plane.length);
 
