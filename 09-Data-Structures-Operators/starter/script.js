@@ -105,6 +105,28 @@ const checkBaggage = function (items) {
 checkBaggage('I have a laptop, some foof and a pocket knife');
 checkBaggage('Socks and camera');
 checkBaggage('Got some snacks and a gun for protection');
+// const [firstName, lastName] = 'Bratislav Panajotovic'.split(' ');
+// const newName = ['Mr.', firstName, lastName.join(' ')];
+// console.log(newName);
+
+// Probaj sam da resis ovo!!
+
+// const capitalizeName = function (capitalizedName) {
+//   const [firstName, lastName] = capitalizedName;
+//   console.log(capitalizedName[0].toUpperCase() + capitalizedName.slice(1));
+// };
+// const names = capitalizeName.split(' ');
+// for (const n of names) {
+//   namesUpper.push(n[0].toUpperCase() + n.slice(1));
+// }
+// console.log(namesUpper.join(' '));
+// capitalizeName('jessica ann smith davis');
+// capitalizeName('bata panajotovic');
+// capitalizeName('nikola radovanovic');
+
+//Padding
+const message = 'Go to gate 23';
+console.log(message.padStart(25, '+'));
 
 // const plane = 'A320';
 // console.log(plane.length);
