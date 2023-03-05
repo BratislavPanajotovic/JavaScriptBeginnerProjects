@@ -6,6 +6,14 @@ document.body.append(document.createElement('button'));
 document.querySelector('button').addEventListener('click', function () {
   const text = document.querySelector('textarea').value;
   const rows = text.split('\n');
+
+  for (const row of rows) {
+    const [first, second] = row.trim().toLowerCase().split('_');
+
+    console.log(
+      `${first}${second.replace(second[0], second[0].toUpperCase())}`
+    );
+  }
 });
 
 // document.querySelector('button').addEventListener('click', function () {
