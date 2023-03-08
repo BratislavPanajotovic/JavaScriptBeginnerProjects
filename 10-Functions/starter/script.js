@@ -124,3 +124,15 @@ poll.displayAnswers.call({ answers: [1, 3, 5] });
 // };
 // let printMyName = name.printFullName.bind(name4, 'Nis');
 // console.log(printMyName());
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+booker();
+booker();
+booker();
