@@ -1,40 +1,40 @@
 'use strict';
-const poll = {
-  question: 'What is your favorite programming language?',
-  options: ['0:JavaScript', '1:Python', '2:Rust', '3:C++'],
-  answers: new Array(4).fill(0),
+// const poll = {
+//   question: 'What is your favorite programming language?',
+//   options: ['0:JavaScript', '1:Python', '2:Rust', '3:C++'],
+//   answers: new Array(4).fill(0),
 
-  registerNewAnswer() {
-    const answer = Number(
-      prompt(
-        `${this.question}\n${this.options.join(
-          '\n'
-        )}(Please select an answer typing an option number.)`
-      )
-    );
+//   registerNewAnswer() {
+//     const answer = Number(
+//       prompt(
+//         `${this.question}\n${this.options.join(
+//           '\n'
+//         )}(Please select an answer typing an option number.)`
+//       )
+//     );
 
-    typeof answer === 'number' &&
-      answer < this.answers.length &&
-      this.answers[answer]++;
+//     typeof answer === 'number' &&
+//       answer < this.answers.length &&
+//       this.answers[answer]++;
 
-    this.displayAnswers();
-    this.displayAnswers('string');
-  },
+//     this.displayAnswers();
+//     this.displayAnswers('string');
+//   },
 
-  displayAnswers(type = 'string') {
-    if (type === 'array') {
-      console.log(this.answers);
-    } else if (type === 'string') {
-      console.log(`This are poll results:${this.answers.join(',')}`);
-    }
-  },
-};
+//   displayAnswers(type = 'string') {
+//     if (type === 'array') {
+//       console.log(this.answers);
+//     } else if (type === 'string') {
+//       console.log(`This are poll results:${this.answers.join(',')}`);
+//     }
+//   },
+// };
 
-document
-  .querySelector('.poll')
-  .addEventListener('click', poll.registerNewAnswer.bind(poll));
+// document
+//   .querySelector('.poll')
+//   .addEventListener('click', poll.registerNewAnswer.bind(poll));
 
-poll.displayAnswers.call({ answers: [1, 3, 5] });
+// poll.displayAnswers.call({ answers: [1, 3, 5] });
 
 //   registerNewAnswer() {
 //     const answer = Number(
@@ -124,15 +124,22 @@ poll.displayAnswers.call({ answers: [1, 3, 5] });
 // };
 // let printMyName = name.printFullName.bind(name4, 'Nis');
 // console.log(printMyName());
-const secureBooking = function () {
-  let passengerCount = 0;
-  return function () {
-    passengerCount++;
-    console.log(`${passengerCount} passengers`);
-  };
-};
+// const secureBooking = function () {
+//   let passengerCount = 0;
+//   return function () {
+//     passengerCount++;
+//     console.log(`${passengerCount} passengers`);
+//   };
+// };
 
-const booker = secureBooking();
-booker();
-booker();
-booker();
+// const booker = secureBooking();
+// booker();
+// booker();
+// booker();
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+});
+document.querySelector('body').addEventListener('click', function () {
+  header.style.color = 'blue';
+});
