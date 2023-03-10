@@ -72,9 +72,6 @@ const currencies = new Map([
 ]);
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-
-/////////////////////////////////////////////////
-
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
 console.log(arr.slice(2, 4));
@@ -86,3 +83,10 @@ console.log(arr.splice(2));
 let arr2 = ['f', 'g', 'h', 'i', 'o'];
 const letters = console.log(arr.concat(arr2));
 console.log(letters.join(' - '));
+
+/////  MAP ////////
+
+const eurToUsd = 1.1;
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
