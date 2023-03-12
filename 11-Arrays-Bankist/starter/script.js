@@ -128,3 +128,12 @@ const calcAverageHumanAge = ages =>
     .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
 const avg1 = calcAverageHumanAge(age);
 console.log(avg1);
+const ingredients = ['spinach', 'olives'];
+
+const pizzaTimer = setTimeout(
+  () => console.log('Here is your pizza'),
+  3000,
+  ...ingredients
+);
+
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
