@@ -106,7 +106,6 @@ const withdrawals = movements.filter(mov => mov < 0);
 console.log(withdrawals);
 
 const balance = movements.reduce((acc, cur, i, arr) => acc + cur, 0);
-
 let balance2 = 0;
 for (const mov of movements) balance2 += mov;
 console.log(balance2);
@@ -115,3 +114,17 @@ const max = movements.reduce((acc, mov) => {
   else return mov;
 }, movements[0]);
 console.log(max);
+const totalDepositInUSD = movements
+  .filter(mov => mov > 0)
+  .map(mov => mov * eurToUsd)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(totalDepositInUSD);
+let age = [5, 2, 4, 1, 15, 8, 3];
+
+const calcAverageHumanAge = ages =>
+  ages
+    .map(age => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter(age => age >= 18)
+    .reduce((acc, age, i, arr) => acc + age / arr.length, 0);
+const avg1 = calcAverageHumanAge(age);
+console.log(avg1);
